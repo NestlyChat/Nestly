@@ -1,0 +1,14 @@
+{
+  "name": "nestly-desktop",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "electron": "^35.1.1",
+    "esbuild": "^0.25.1"
+  }
+}
