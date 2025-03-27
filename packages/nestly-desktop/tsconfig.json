@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     // Environment setup & latest features
-    "lib": ["esnext"],
+    "lib": ["esnext","dom"],
     "target": "ESNext",
     "module": "ESNext",
     "moduleDetection": "force",
@@ -23,6 +23,12 @@
     // Some stricter flags (disabled by default)
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false
+    "noPropertyAccessFromIndexSignature": false,
+
+    // Paths owo
+    "baseUrl": "./", 
+    "paths": {
+      "@shared/*": ["src/shared/types/*"]
+    }
   }
 }
