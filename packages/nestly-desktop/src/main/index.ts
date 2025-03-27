@@ -13,6 +13,11 @@ function createWindow() {
 		}
 	});
 
+	win.webContents.setWindowOpenHandler((details) => {
+		shell.openExternal(details.url);
+		return { action: "deny" };
+	});
+
 	win.loadURL(
 		process.env.NODE_ENV === "production" ? "https://some.url/" : "http://localhost:5173/"
 	);

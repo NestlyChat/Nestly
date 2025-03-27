@@ -1,21 +1,8 @@
-import { ipcMain, ipcRenderer, nativeImage, shell } from 'electron';
+import { ipcRenderer, nativeImage } from 'electron';
 import { clipboard } from 'electron';
 import { contextBridge } from 'electron/renderer';
-import type { EventType, ListenerType } from "@shared/preload.ts";
+import type { EventType, ListenerType, CustomEvent } from "@shared/preload.ts";
 import OnEvents from 'src/ipcs/onevents';
-
-// [Kaan] - It works?
-// @ts-ignore
-document.addEventListener('click', (event: EventType) => {
-    const target = event.target.closest('a');
-    if (target && target.href) {
-        event.preventDefault();
-        ipcRenderer.send(OnEvents.LinkClicked, {
-            href: target.href,
-            target: target.target || '_self'
-        })
-    }
-});
 
 const NestlyNative = {
     /*ipc: {
