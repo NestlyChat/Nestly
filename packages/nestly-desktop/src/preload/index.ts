@@ -1,8 +1,6 @@
 import { ipcRenderer, nativeImage } from 'electron';
 import { clipboard } from 'electron';
 import { contextBridge } from 'electron/renderer';
-import type { EventType, ListenerType, CustomEvent } from "@shared/preload.ts";
-import OnEvents from 'src/ipcs/onevents';
 
 const NestlyNative = {
     /*ipc: {

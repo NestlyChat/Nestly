@@ -5,6 +5,6 @@ export type CustomEvent = (EventType | Event) & {
     target: {
       closest: (selector: string) => any;
     };
-    preventDefault: () => void;
+    preventDefault: () => any;
   };
   

@@ -28,7 +28,7 @@
     // Paths owo
     "baseUrl": "./", 
     "paths": {
-      "@shared/*": ["src/shared/types/*"]
+      "@shared/*": ["src/shared/*"]
     }
   }
 }
