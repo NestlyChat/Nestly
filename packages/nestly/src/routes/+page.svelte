@@ -22,6 +22,7 @@
             <form class="chatForm">
                 <input type="text" class="chatInputField" placeholder="Type a message..." />
                 <button type="submit" class="chatSendButton">Send</button>
+            </form>
         </div>
 
         <div class="nestMemberList"></div>
