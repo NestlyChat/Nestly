@@ -10,8 +10,17 @@
             <div class="nestSpaceDescription"></div>
         </div>
         <div class="primaryUser">
-            <div class="nestUserAvatar"></div>
-            <div class="nestUserName"></div>
+            <div class="nestUserAvatar">
+                <div class="nestUserAvatarImage">
+                </div>
+            </div>
+            <div class="nestUserName">
+                <div class="nestUserStatus">
+                    <div class="nestUserStatusIcon"></div>
+                    <div class="nestUserStatusText"></div>
+                </div>
+            </div>
+            <div class="nestUserSettingsArrow"></div>
         </div>
     </div>
 
@@ -19,14 +28,14 @@
         <div class="channelList"></div>
         <div class="nestChatHistory"></div>
         <div class="chatInput">
-            <form class="chatForm">
+            <div class="chatForm" role="textbox" aria-multiline="true" aria-label="Type a message..." contenteditable="true" spellcheck="false" aria-autocomplete="list">
                 <input type="text" class="chatInputField" placeholder="Type a message..."/>
                 <button type="submit" class="chatSendButton">Send</button>
-            </form>
+            </div>
+        </div>
         </div>
 
         <div class="nestMemberList"></div>
     </div>
 
-</div>
-<!-- thanks catppuccin for the color scheme -->
+<!-- Thank you to the catppuccin team for the color scheme -->
