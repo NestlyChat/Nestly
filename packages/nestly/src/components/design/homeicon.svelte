@@ -10,9 +10,6 @@
 <div class="nestSpace"></div>
 
 <style>
-    .nesthome {
-        padding: 5px;
-    }
     .homeLogo {
         background-color: var(--primary-accent);
         border-radius: 50px;

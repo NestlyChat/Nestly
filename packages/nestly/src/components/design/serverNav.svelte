@@ -12,6 +12,7 @@
         height: 72px;
         display: flex;
         flex-direction: row;
+        align-items: center;
         background-color: var(--background-primary);
         width: 100%;
         bottom: 0;
