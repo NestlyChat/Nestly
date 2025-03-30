@@ -1,7 +1,7 @@
 <div class="nestHome">
     <img
         class="homeLogo"
-        src="static/pngs/iconImage-white.png"
+        src="pngs/iconImage-white.png"
         alt="Nestly Home"
         aria-label="Home"
         width="65px"

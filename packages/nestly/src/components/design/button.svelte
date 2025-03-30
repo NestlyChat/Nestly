@@ -20,3 +20,29 @@
     {/if}
     {text}
 </button>
+
+<style>
+    .menuButton {
+        transition: border ease 0.2s;
+        align-items: center;
+        display: flex;
+        justify-content: left;
+        height: 52px;
+        width: 52px;
+        color: var(--font-color);
+        background-color: var(--background-primary);
+        border-radius: 6px;
+        padding: 6px 8px;
+        width: 240px;
+        text-align: left;
+        border: 1px solid transparent;
+
+        svg {
+            margin-right: 5px;
+        }
+
+        &:hover {
+            border: 1px solid var(--primary-accent);
+        }
+    }
+</style>
