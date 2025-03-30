@@ -1,4 +1,5 @@
 :root{
+    /* Catppuccin Color Palette */
     --background-primary:#11111b;
     --background-secondary:#1e1e2e;
     --background-tertiary:#45475a;
@@ -28,6 +29,11 @@
     --surface2: #585b70;
     --surface1: #45475a;
     --surface0: #313244;
+
+    /* App Branding (Title TBD) */
+    --primary-accent: var(--blue);
+    --secondary-accent: var(--teal);
+    --tertiary-accent: var(--sky);
 }
 
 body, html {
