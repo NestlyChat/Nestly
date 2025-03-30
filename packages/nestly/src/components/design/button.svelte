@@ -1,48 +1,81 @@
 <script lang="ts">
-    let { text, viewBox, size, color, dPath } = $props<{
+    let { text, leftIcon, rightIcon, color, size = "24" } = $props<{
         text: string;
-        viewBox?: string;
-        size?: string;
+        leftIcon?: { 
+            dPath: string;
+            viewBox?: string;
+            color?: string;
+        };
+        rightIcon?: { 
+            dPath: string;
+            viewBox?: string;
+            color?: string;
+        };
         color?: string;
-        dPath?: string;
+        size?: string;
     }>();
 </script>
 
-<button class="menuButton" aria-label={text}>
-    {#if dPath}
+<button class="menuButton" aria-label={text} style:color={color || "var(--font-color)"}>
+    {#if leftIcon}
         <svg
-            viewBox={viewBox || "0 0 24 24"}
-            width={size || "24"}
-            height={size || "24"}
+            viewBox={leftIcon.viewBox || "0 0 24 24"}
+            width={size}
+            height={size}
+            class="leftIcon"
         >
-            <path fill={color || "currentColor"} d={dPath} />
+            <path fill={leftIcon.color || "currentColor"} d={leftIcon.dPath} />
         </svg>
     {/if}
-    {text}
+    
+    <span class="buttonText">{text}</span>
+    
+    {#if rightIcon}
+        <svg
+            viewBox={rightIcon.viewBox || "0 0 24 24"}
+            width={size}
+            height={size}
+            class="rightIcon"
+        >
+            <path fill={rightIcon.color || "currentColor"} d={rightIcon.dPath} />
+        </svg>
+    {/if}
 </button>
 
 <style>
     .menuButton {
         transition: border ease 0.2s;
-        align-items: center;
         display: flex;
-        justify-content: left;
+        align-items: center;
+        justify-content: flex-start;
         height: 52px;
-        width: 52px;
-        color: var(--font-color);
         background-color: var(--background-primary);
         border-radius: 6px;
-        padding: 6px 8px;
+        padding: 6px 12px;
         width: 240px;
         text-align: left;
         border: 1px solid transparent;
-
-        svg {
-            margin-right: 5px;
-        }
-
-        &:hover {
-            border: 1px solid var(--primary-accent);
-        }
+        position: relative;
+    }
+    
+    .menuButton:hover {
+        border: 1px solid var(--primary-accent);
+    }
+    
+    .leftIcon {
+        margin-right: 8px;
+        flex-shrink: 0;
+    }
+    
+    .rightIcon {
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+    
+    .buttonText {
+        flex-grow: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 </style>
