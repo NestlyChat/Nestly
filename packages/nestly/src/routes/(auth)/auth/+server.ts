@@ -8,10 +8,10 @@ interface Login {
 	token: string;
 }
 
-const getLogin = db.query<Login, [ email: string ]>(
+const getLogin = db.query<Login, [email: string]>(
 	`SELECT * FROM logins WHERE email = ?`
 );
-const insertLogin = db.query<void, [ email: string, password: string, token: string ]>(
+const insertLogin = db.query<void, [email: string, password: string, token: string]>(
 	`INSERT INTO logins (email, password, token) VALUES (?, ?, ?)`
 );
 
@@ -48,13 +48,13 @@ export const POST: RequestHandler = async ({ request }) => {
 		const token = `${
 			// Now
 			Buffer.from(Date.now().toString(), "utf-8").toString("base64").slice(0, 10)
-		}:${
+			}:${
 			// Will be time of user create ?
 			Buffer.from(Date.now().toString(), "utf-8").toString("base64").slice(6, 13)
-		}:${(
-			// Random
-			await Bun.password.hash(Buffer.from(Date.now().toString(), "utf-8").toString("base64"))).slice(20, 40)
-		}`;
+			}:${(
+				// Random
+				await Bun.password.hash(Buffer.from(Date.now().toString(), "utf-8").toString("base64"))).slice(20, 40)
+			}`;
 
 		insertLogin.run(
 			email,

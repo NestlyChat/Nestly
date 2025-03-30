@@ -1,16 +1,15 @@
 <script lang="ts">
-    import Homeicon from "esign/homeicon.svelte";
+    import Homeicon from "./homeicon.svelte";
 </script>
 
-
 <ul class="serverNav">
- <Homeicon>
+    <Homeicon />
 </ul>
 
 <style>
     .serverNav {
         position: fixed;
-        height:72px;
+        height: 72px;
         display: flex;
         flex-direction: row;
         background-color: var(--background-primary);

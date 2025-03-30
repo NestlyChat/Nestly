@@ -1,14 +1,14 @@
-:root{
+:root {
     /* Catppuccin Color Palette */
-    --background-primary:#11111b;
-    --background-secondary:#1e1e2e;
-    --background-tertiary:#45475a;
-    --font-color:#cdd6f4;
-    --green:#a6e3a1;
-    --red:#f38ba8;
-    --yellow:#f9e2af;
-    --blue:#89b4fa;
-    --purple:#cba6f7;
+    --background-primary: #11111b;
+    --background-secondary: #1e1e2e;
+    --background-tertiary: #45475a;
+    --font-color: #cdd6f4;
+    --green: #a6e3a1;
+    --red: #f38ba8;
+    --yellow: #f9e2af;
+    --blue: #89b4fa;
+    --purple: #cba6f7;
     --rosewater: #f5e0dc;
     --flamingo: #f2cdcd;
     --pink: #f5c2e7;
@@ -36,19 +36,20 @@
     --tertiary-accent: var(--sky);
 }
 
-body, html {
+body,
+html {
     width: 100%;
     height: 100%;
     position: absolute;
-    overflow:hidden;
+    overflow: hidden;
     color: var(--font-color);
 }
 
 .appBase {
-    position:absolute;
-    width:100%;
-    background-color:var(--background-tertiary);
-    height:100%;
+    position: absolute;
+    width: 100%;
+    background-color: var(--background-tertiary);
+    height: 100%;
 }
 
 
@@ -98,7 +99,7 @@ body, html {
     flex-direction: row;
     align-items: center;
     padding-left: 48px;
-    width:calc(100% - 48px);
+    width: calc(100% - 48px);
     border-radius: 8px;
 }
 
@@ -112,14 +113,16 @@ body, html {
     height: 52px;
     transition: border ease 0.2s;
     border: 1px solid transparent;
+
     &:hover {
         border: 1px solid var(--primary-accent)
     }
+
     &:focus {
         border: 1px solid var(--red)
-        
     }
 }
+
 .chatSendButton {
     transition: border ease 0.2s;
     position: sticky;
@@ -129,6 +132,7 @@ body, html {
     border-radius: 8px;
     align-content: flex-end;
     border: 1px solid transparent;
+
     &:hover {
         border: 1px solid var(--primary-accent)
     }
@@ -168,11 +172,12 @@ body, html {
     width: 240px;
     text-align: left;
     border: 1px solid transparent;
+
     svg {
         margin-right: 5px;
     }
+
     &:hover {
         border: 1px solid var(--primary-accent)
     }
 }
-
