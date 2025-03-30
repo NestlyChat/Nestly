@@ -8,7 +8,7 @@
     }>();
 </script>
 
-<button class="chatSendButton flex" aria-label={text}>
+<button class="chatSendButton" aria-label={text}>
     {#if dPath}
         <svg
             viewBox={viewBox || "0 0 24 24"}
