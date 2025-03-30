@@ -1,7 +1,10 @@
+<script lang="ts">
+        import Homeicon from "../components/design/homeicon.svelte";
+</script>
 <div class="appBase">
 
     <ul class="serverNav">
-        <div class="nestHome"></div>
+        <Homeicon/>
         <div class="nestSpace"></div>
     </ul>
 

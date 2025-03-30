@@ -51,15 +51,7 @@ body, html {
     height:100%;
 }
 
-.serverNav {
-    position: fixed;
-    height:72px;
-    display: flex;
-    flex-direction: row;
-    background-color: var(--background-primary);
-    width: 100%;
-    bottom: 0;
-}
+
 
 .appHeader {
     position: fixed;
@@ -111,20 +103,35 @@ body, html {
 }
 
 .chatInputField {
+    transition: border ease 0.2s;
     background-color: var(--background-primary);
     width: 100%;
     margin-right: 10px;
     border-radius: 8px;
     border-color: transparent;
     height: 52px;
+    transition: border ease 0.2s;
+    border: 1px solid transparent;
+    &:hover {
+        border: 1px solid var(--primary-accent)
+    }
+    &:focus {
+        border: 1px solid var(--red)
+        
+    }
 }
 .chatSendButton {
+    transition: border ease 0.2s;
     position: sticky;
     height: 52px;
     width: 52px;
     background-color: var(--background-primary);
     border-radius: 8px;
     align-content: flex-end;
+    border: 1px solid transparent;
+    &:hover {
+        border: 1px solid var(--primary-accent)
+    }
 }
 
 .chatForm {
@@ -149,17 +156,23 @@ body, html {
 }
 
 .menuButton {
+    transition: border ease 0.2s;
     align-items: center;
     display: flex;
-    justify-content: center;
-    justify-content:left;
+    justify-content: left;
     height: 52px;
     width: 52px;
     background-color: var(--background-primary);
     border-radius: 8px;
     padding: 6px 8px;
     width: 240px;
+    text-align: left;
+    border: 1px solid transparent;
     svg {
         margin-right: 5px;
     }
+    &:hover {
+        border: 1px solid var(--primary-accent)
+    }
 }
+
