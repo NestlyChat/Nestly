@@ -45,8 +45,8 @@
                     class="chatInputField"
                     placeholder="Type a message..."
                 />
-                <button type="submit" class="chatSendButton">Send</button>
             </div>
+            <button type="button" class="chatSendButton">Send</button>
         </div>
     </div>
 
@@ -118,6 +118,7 @@
         padding-left: 48px;
         width: calc(100% - 48px);
         border-radius: 8px;
+        color: var(--text);
     }
 
     .chatInputField {
