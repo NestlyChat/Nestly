@@ -1,5 +1,10 @@
 <script lang="ts">
     import Button from "@components/base/Button.svelte";
+    import { onMount } from "svelte";
+    // Theres probably a better way to do this
+    onMount(() => {
+    document.title = "Nestly : Register";
+    });
 </script>
 
 <div class="appBase">
