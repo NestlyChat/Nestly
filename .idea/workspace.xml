@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3583d48-8b13-424d-8350-bb84da5c02f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/packages/nestly/src/lib/client/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/nestly/src/routes/chat/+layout.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/nestly/src/routes/chat/[guild]/+page.server.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/nestly/src/stores/session.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/nestly/src/components/design/button.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/nestly/src/components/design/homeicon.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/packages/nestly/src/components/design/homeicon.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/nestly/src/components/design/serverNav.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/nestly/src/components/textbar.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/nestly/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/packages/nestly/src/routes/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/nestly/src/routes/developer/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/packages/nestly/src/routes/developer/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/nestly/static/pngs/iconImage-dark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/nestly/static/pngs/iconImage-white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/nestly/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/nestly/svelte.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/nestly/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/nestly/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +97,7 @@
       <workItem from="1743366296874" duration="1285000" />
       <workItem from="1743390652904" duration="1185000" />
       <workItem from="1743391897393" duration="1467000" />
+      <workItem from="1743393878824" duration="1620000" />
     </task>
     <servers />
   </component>
