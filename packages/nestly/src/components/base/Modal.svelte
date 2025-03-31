@@ -80,8 +80,10 @@
     }
 
     .modal-content {
-        background-color: white;
+        background-color: var(--background-secondary);
         padding: 20px;
+        border: 1px solid var(--primary-accent);
+        color: var(--text);
         border-radius: 5px;
         max-width: 500px;
         width: 100%;
@@ -95,7 +97,7 @@
         justify-content: space-between;
         align-items: flex-start;
         margin-bottom: 15px;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid var(--primary-accent);
         padding-bottom: 10px;
     }
 
@@ -111,12 +113,15 @@
 
     .modal-body {
         margin-bottom: 15px;
+        background-color: #eee;
+        border-radius: 8px;
+        color: black;
     }
 
     .modal-footer {
         display: flex;
         justify-content: flex-end;
         padding-top: 10px;
-        border-top: 1px solid #eee;
+        border-top: 1px solid var(--primary-accent);
     }
 </style>
