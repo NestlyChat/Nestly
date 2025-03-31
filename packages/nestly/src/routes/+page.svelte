@@ -49,7 +49,47 @@
             </div>
             <div class="infoCardHeading1">Who is behind Nestly?</div>
             <div class="infoCardSection">
-                Placeholder
+                Nestly is built by a group of Discord Client Mod developers, who see that it is important to give the user the ability to customize their client. <br />
+                We see it as an important core functionality of the app to make the app truly <i>yours</i>. Both in usage and appearance.<br />
+                <br />
+                The Nestly Team is:<br />
+                <div class="teamGallery">
+                    <a class="teamMemberClickable" href="https://github.com/caffeinedubz">
+                    <div class="teamMember">
+                        <img class="teamMemberAvatar" src="https://avatars.githubusercontent.com/u/73869003?v=4" alt="caffeinedubz 's Avatar" width="120px">
+                        <div class="teamMemberUsername">Caffeinedubz</div>
+                        <div class="teamRoleDescription">Project Lead</div>
+                    </div>
+                    </a>
+                    <a class="teamMemberClickable" href="https://github.com/zrodevkaan/">
+                    <div class="teamMember">
+                        <img class="teamMemberAvatar" src="https://avatars.githubusercontent.com/u/90235641?v=4" alt="zrodevkaan's Avatar" width="120px">
+                        <div class="teamMemberUsername">zrodevkaan</div>
+                        <div class="teamRoleDescription">Backend Lead</div>
+                    </div>
+                    </a>
+                    <a class="teamMemberClickable" href="https://github.com/doggybootsy/">
+                    <div class="teamMember">
+                        <img class="teamMemberAvatar" src="https://avatars.githubusercontent.com/u/71196819?v=4" alt="DoggyBootsy's Avatar" width="120px">
+                        <div class="teamMemberUsername">DoggyBootsy</div>
+                        <div class="teamRoleDescription">Project Developer</div>
+                    </div>
+                    </a>
+                    <a class="teamMemberClickable" href="https://github.com/riddim-glitch">
+                    <div class="teamMember">
+                        <img class="teamMemberAvatar" src="https://api.lanyard.rest/801089753038061669.png" alt="Riddim-GLiTCH's Avatar" width="120px">
+                        <div class="teamMemberUsername">Riddim-GLiTCH</div>
+                        <div class="teamRoleDescription">Lead UI Designer</div>
+                    </div>
+                    </a>
+                    <a class="teamMemberClickable" href="https://github.com/notiphiliac/">
+                    <div class="teamMember">
+                        <img class="teamMemberAvatar" src="https://avatars.githubusercontent.com/u/59151989?v=4" alt="Notiphiliac's Avatar" width="120px">
+                        <div class="teamMemberUsername">Notiphiliac</div>
+                        <div class="teamRoleDescription">Tester, Designer</div>
+                    </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -72,6 +112,7 @@
         width: 100%;
         top: 0;
         align-items: center;
+        z-index: 1;
     }
     .nestlyLogo {
         padding: 5px;
@@ -220,5 +261,36 @@
     .loginButtonContents {
         display: inline-flex;
         margin-left: 5px;
+    }
+
+    .teamGallery {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+    }
+    .teamMember {
+        max-width: 120px;
+        transition: all ease 0.2s;
+        align-content: center;
+        text-align: center;
+        background-color: var(--background-primary);
+        padding: 5px;
+        border: 1px solid var(--primary-accent);
+        border-radius: 8px;
+        &:hover {
+            translate: 0 -3px;
+            scale: 1.05;
+        }
+    }
+    .teamMemberUsername {
+        border-top: 1px solid var(--primary-accent);
+        margin-top: 5px;
+        padding-top: 5px;
+        font-size: smaller;
+        font-weight: bold;
+    }
+    .teamRoleDescription {
+        font-size: small;
     }
 </style>
