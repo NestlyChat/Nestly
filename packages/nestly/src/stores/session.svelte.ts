@@ -1,17 +1,17 @@
 import { browser } from "$app/environment";
+import BaseStore from "./base";
 
 interface UserData {
     token?: string;
 }
 
-export default new class SessionStore {
+export default new class SessionStore extends BaseStore {
     public data = $state<UserData>({});
 
     constructor() {
-        if (!browser) return;
-
-        console.log(this);
+        super();
         
+        if (!browser) return;
 
         const token = localStorage.getItem("token");
 
