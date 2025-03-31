@@ -46,7 +46,7 @@
                     placeholder="Type a message..."
                 />
             </div>
-            <button type="button" class="chatSendButton">Send</button>
+            <button type="submit" class="chatSendButton" >Send</button>
         </div>
     </div>
 
