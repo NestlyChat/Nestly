@@ -102,6 +102,7 @@
         border-color: transparent;
         height: 52px;
         border: 1px solid transparent;
+        border-bottom: 2px solid var(--primary-accent)!important;
         &:hover {
             border: 1px solid var(--primary-accent);
         }
