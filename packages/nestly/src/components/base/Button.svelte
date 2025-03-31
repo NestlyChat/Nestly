@@ -44,6 +44,7 @@
 
 <style>
     .menuButton {
+        cursor: pointer;
         transition: border ease 0.2s;
         display: flex;
         align-items: center;
