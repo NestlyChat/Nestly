@@ -1,5 +1,5 @@
 <script lang="ts">
-    let { text, leftIcon, rightIcon, color, size = "24" } = $props<{
+    let { text, leftIcon, rightIcon, color, size = "24", onClick } = $props<{
         text: string;
         leftIcon?: { 
             dPath: string;
@@ -13,10 +13,11 @@
         };
         color?: string;
         size?: string;
+        onClick?: () => void;
     }>();
 </script>
 
-<button class="menuButton" aria-label={text} style:color={color || "var(--font-color)"}>
+<button class="menuButton" onclick={onClick} aria-label={text} style:color={color || "var(--font-color)"}>
     {#if leftIcon}
         <svg
             viewBox={leftIcon.viewBox || "0 0 24 24"}

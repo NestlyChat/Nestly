@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3583d48-8b13-424d-8350-bb84da5c02f2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/packages/nestly/src/components/base/Modal.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/nestly/src/components/base/Button.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/packages/nestly/src/components/base/Button.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/nestly/src/routes/developer/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/packages/nestly/src/routes/developer/+page.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +25,7 @@
         <option value="+layout" />
         <option value="TypeScript File" />
         <option value="+page" />
+        <option value="Modal" />
       </list>
     </option>
   </component>
@@ -97,6 +101,7 @@
       <workItem from="1743390652904" duration="1185000" />
       <workItem from="1743391897393" duration="1467000" />
       <workItem from="1743393878824" duration="5345000" />
+      <workItem from="1743447493843" duration="2215000" />
     </task>
     <servers />
   </component>
