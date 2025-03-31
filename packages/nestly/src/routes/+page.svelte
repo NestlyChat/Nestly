@@ -6,7 +6,7 @@
         <nav class="landingNavigation">
             <a href="/">
                 <div class="websiteNavigationTab websiteCurrentTab">
-                <li >Home</li>
+                <li>Home</li>
                 </div>
             </a>
             <a href="/">

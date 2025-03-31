@@ -1,57 +1,113 @@
-
 <script lang="ts">
     import Button from "@components/base/Button.svelte";
     import { onMount } from "svelte";
-    // Theres probably a better way to do this
+    import UserStore from "../../stores/users.svelte";
+
+    let email = "";
+    let password = "";
+    let isLoading = false;
+    let errorMessage = "";
+
     onMount(() => {
-    document.title = "Nestly : Login";
+        document.title = "Nestly : Login";
     });
+
+    const handleLogin = async () => {
+        if (!email || !password) {
+            errorMessage = "Please enter both email and password";
+            return;
+        }
+
+        isLoading = true;
+        const success = await UserStore.login(email, password);
+        isLoading = false;
+
+        if (success) {
+            window.location.href = "/chat";
+        } else {
+            errorMessage = UserStore.data.error || "Login failed";
+        }
+    };
+
+    const handleRegister = async () => {
+        if (!email || !password) {
+            errorMessage = "Please enter both email and password";
+            return;
+        }
+
+        isLoading = true;
+        const success = await UserStore.register(email, password);
+        isLoading = false;
+
+        if (success) {
+            window.location.href = "/chat";
+        } else {
+            errorMessage = UserStore.data.error || "Registration failed";
+        }
+    };
 </script>
 
 <div class="appBase">
     <div class="loginContainer">
-    <div class="loginHeader">
-        <div class="loginLogo">
-            <img src="static/svgs/iconwithnestlykey.svg" alt="home logo" width="200px">
-        </div>
-        <form class="loginForm">
-            <h3 class="loginGreeting">Welcome to Nestly Chat!</h3>
-            <div class="loginFormContainer">
-                <label>
-                <input type="text" placeholder="Email or Username" required />
-                </label>
-                <label>
-                <input type="password" placeholder="Password" required />
-                </label>
-                <div class="passResetButton">
-                    <a href="login">Forgot your Password?</a>
-                    <!-- reference is a temporary placeholder -->
+        <div class="loginHeader">
+            <div class="loginLogo">
+                <img src="static/svgs/iconwithnestlykey.svg" alt="home logo" width="200px">
+            </div>
+            <form class="loginForm" on:submit|preventDefault>
+                <h3 class="loginGreeting">Welcome to Nestly Chat!</h3>
+                <div class="loginFormContainer">
+                    <label>
+                        <input
+                                type="text"
+                                placeholder="Email"
+                                bind:value={email}
+                                required
+                        />
+                    </label>
+                    <label>
+                        <input
+                                type="password"
+                                placeholder="Password"
+                                bind:value={password}
+                                required
+                        />
+                    </label>
+                    <div class="passResetButton">
+                        <a href="reset-password">Forgot your Password?</a>
+                    </div>
+
+                    {#if errorMessage}
+                        <div class="errorMessage">
+                            {errorMessage}
+                        </div>
+                    {/if}
                 </div>
-            </div>
-            <div class="loginButtonContainer" style="display: flex">
-                <Button
-                text="Login"
-                    rightIcon={{
-                        dPath: "M8 7a5 5 0 1 1 3.61 4.804l-1.903 1.903A1 1 0 0 1 9 14H8v1a1 1 0 0 1-1 1H6v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2a1 1 0 0 1 .293-.707L8.196 8.39A5.002 5.002 0 0 1 8 7Zm5-3a.75.75 0 0 0 0 1.5A1.5 1.5 0 0 1 14.5 7 .75.75 0 0 0 16 7a3 3 0 0 0-3-3Z",
-                        viewBox: "0 0 24 24",
-                    }}
-                    size="16"
-                />
-                <Button
-                text="Register"
-                    rightIcon={{
-                        dPath: "M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z",
-                        viewBox: "0 0 24 24",
-                    }}
-                    size="16"
-                />
-            </div>
-        </form>
-    </div>    
+                <div class="loginButtonContainer" style="display: flex">
+                    <Button
+                            text={isLoading ? "Loading..." : "Login"}
+                            rightIcon={{
+                            dPath: "M8 7a5 5 0 1 1 3.61 4.804l-1.903 1.903A1 1 0 0 1 9 14H8v1a1 1 0 0 1-1 1H6v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2a1 1 0 0 1 .293-.707L8.196 8.39A5.002 5.002 0 0 1 8 7Zm5-3a.75.75 0 0 0 0 1.5A1.5 1.5 0 0 1 14.5 7 .75.75 0 0 0 16 7a3 3 0 0 0-3-3Z",
+                            viewBox: "0 0 24 24",
+                        }}
+                            size="16"
+                            onClick={handleLogin}
+                            disabled={isLoading}
+                    />
+                    <Button
+                            text={isLoading ? "Loading..." : "Register"}
+                            rightIcon={{
+                            dPath: "M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z",
+                            viewBox: "0 0 24 24",
+                        }}
+                            size="16"
+                            onClick={handleRegister}
+                            disabled={isLoading}
+                    />
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-
-
 
 <style>
     body,
@@ -134,5 +190,14 @@
         padding-top: 15px;
         gap: 15px;
         justify-content: space-evenly;
+    }
+
+    .errorMessage {
+        color: #ff5555;
+        text-align: center;
+        padding: 5px;
+        margin: 5px 10px;
+        border-radius: 4px;
+        font-size: 14px;
     }
 </style>
