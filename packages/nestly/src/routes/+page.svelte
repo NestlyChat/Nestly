@@ -4,8 +4,16 @@
             <img src="static/svgs/iconwithnestlykey.svg" alt="home logo" width="170px">
         </div>
         <nav class="landingNavigation">
-            <li><a href="/">Home</a></li>
-            <li><a href="/">Placeholder</a></li>
+            <a href="/">
+                <div class="websiteNavigationTab websiteCurrentTab">
+                <li >Home</li>
+                </div>
+            </a>
+            <a href="/">
+                <div class="websiteNavigationTab">
+                <li>Placeholder</li>
+                </div>
+            </a>
         </nav>
         <a href="login" class="loginButton">
             <div class="loginButtonContainer">
@@ -39,12 +47,17 @@
                     <p>Nestly does its best to keep bloat down, keeping the experience nice and snappy.</p>
                 </ul>
             </div>
+            <div class="infoCardHeading1">Who is behind Nestly?</div>
+            <div class="infoCardSection">
+                Placeholder
+            </div>
         </div>
     </div>
 </div>
 
 
 <style>
+    
     .landingPage {
         position: absolute;
         width: 100%;
@@ -67,16 +80,36 @@
         display: flex;
         color: var(--text);
     }
+    .websiteNavigationTab {
+        color: var(--primary-accent);       
+        font-weight: 700;
+        margin: 1.2rem 1.2rem;
+        margin-bottom: 0;
+        position: relative;
+        display: inline-block;
+    }
+    .websiteNavigationTab:after {
+        content: '';
+        position: absolute;
+        /* bottom: -6px; */
+        left: 0;
+        width: 10px;
+        height: 3px;
+        background-color: var(--primary-accent);
+        transition: width 0.3s ease;
+    }
+
+    .websiteCurrentTab:after {
+        width: 100%;
+    }
+    .websiteNavigationTab:hover:after {
+        width: 100%;
+    }
     .landingNavigation li {
-        transition: border ease 0.2s;
         list-style: none;
         display: flex;
         justify-content: center;
         margin: 5px;
-        border-bottom: 1px solid transparent;
-        &:hover {
-            border-bottom: 1px solid var(--primary-accent);
-        }
     }
     .landingContent {
         margin-top: 70px;
@@ -100,39 +133,75 @@
         margin-bottom: 30px;
     }
     .infoCardIntroduction {
-        color: var(--red);
+        color: var(--peach);
         font-weight: bold;
         text-align: center;
         font-size: large;
         margin-bottom: 50px;
     }
     .infoCardHeading1 {
-        color: var(--red);
+        color: var(--green);
         text-transform: uppercase;
-        font-weight: bold;
-        font-size: large;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
+        font-weight: 700;
+        font-size: 1.8rem;
+        margin: 1.2rem 1.2rem;
+        margin-bottom: 0;
         position: relative;
         display: inline-block;
-        &:after {
-            content: '';
-            position: absolute;
-            bottom: 0px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--red);
-        }
     }
+
+    .infoCardHeading1:after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: var(--green);
+        transition: width 0.3s ease;
+    }
+
+    .infoCardHeading1:hover:after {
+        width: 100%;
+    }
+
     .infoCardSection {
-        padding: 0 10px;
-        li {
-            list-style: disc;
-            margin-left: 20px;
-        }
+        padding: 1rem 1rem;
     }
+
+
+    .infoCardSection li {
+        list-style: none;
+        position: relative;
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: var(--sapphire);
+        margin: 2rem 0 0.5rem 0;
+        padding-left: 2rem;
+    }
+
+
+    .infoCardSection li:after {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 22px;
+        height: 22px;
+        text-align: center;
+        line-height: 22px;
+        color: var(--green);
+        font-size: 0.9rem;
+    }
+
+    .infoCardSection p {
+        margin: 0 0 1.5rem 2rem;
+        color: var(--text-color);
+        line-height: 1.5;
+        font-size: 1rem;
+    }
+
 
     .loginButtonContainer {
         transition: border ease 0.2s;

@@ -36,5 +36,10 @@
     --tertiary-accent: var(--sky);
 }
 
+body {
+    background: var(--background-secondary);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
