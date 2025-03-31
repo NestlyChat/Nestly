@@ -80,6 +80,7 @@
 
     .loginForm {
         background: var(--background-secondary);
+        max-width: 400px;
         width: 55%;
         color: var(--text);
         padding: 10px;
@@ -126,5 +127,6 @@
         padding: 10px;
         padding-top: 15px;
         gap: 15px;
+        justify-content: space-evenly;
     }
 </style>

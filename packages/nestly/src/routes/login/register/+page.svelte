@@ -74,8 +74,8 @@
     }
 
     .registerForm {
-        max-width: 500px;
         background: var(--background-secondary);
+        max-width: 400px;
         width: 55%;
         color: var(--text);
         padding: 10px;
