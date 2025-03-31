@@ -1,6 +1,6 @@
 <script lang="ts">
-    import Button from "../../components/design/button.svelte";
-    import Homeicon from "../../components/design/homeicon.svelte";
+    import Button from "@components/base/Button.svelte";
+    import Homeicon from "@components/design/HomeIcon.svelte";
 </script>
 
 <div class="appBase">

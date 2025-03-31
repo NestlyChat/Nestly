@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Homeicon from "./homeicon.svelte";
+    import Homeicon from "@components/design/HomeIcon.svelte";
 </script>
 
 <ul class="serverNav">

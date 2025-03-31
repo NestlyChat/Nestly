@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ServerNavigation from "../components/design/serverNav.svelte";
+    import ServerNavigation from "@components/layout/ServerNavigations.svelte";
 </script>
 
 <div class="appBase">
