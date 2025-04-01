@@ -1,5 +1,6 @@
 import { json, type RequestHandler } from '@sveltejs/kit';
 import db from "$lib/server/database";
+import jsc from "bun:jsc";
 
 interface Login {
 	login_id: number;
@@ -36,6 +37,7 @@ export const GET: RequestHandler = async ({ request }) => {
 
 	return json({ status: 401, message: "Request is malformed" }, { status: 401 });
 };
+
 export const POST: RequestHandler = async ({ request }) => {
 	const email = request.headers.get("email");
 	const password = request.headers.get("password");
@@ -53,7 +55,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			Buffer.from(Date.now().toString(), "utf-8").toString("base64").slice(6, 13)
 			}:${(
 				// Random
-				await Bun.password.hash(Buffer.from(Date.now().toString(), "utf-8").toString("base64"))).slice(20, 40)
+				await Bun.password.hash(Buffer.from((Date.now() * jsc.getRandomSeed()).toString(), "utf-8").toString("base64"))).slice(20, 40)
 			}`;
 
 		insertLogin.run(
