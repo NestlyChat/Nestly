@@ -21,7 +21,7 @@ export default new class UserStore extends BaseStore {
         this.data.error = undefined;
 
         try {
-            const response = await fetch('/auth', {
+            const response = await fetch('/api/auth', {
                 method: 'GET',
                 headers: { 'email': email, 'password': password }
             });
@@ -47,7 +47,7 @@ export default new class UserStore extends BaseStore {
         this.data.error = undefined;
 
         try {
-            const response = await fetch('/auth', {
+            const response = await fetch('/api/auth', {
                 method: 'POST',
                 headers: { 'email': email, 'password': password }
             });
