@@ -11,7 +11,7 @@
             </a>
             <a href="/">
                 <div class="websiteNavigationTab">
-                <li>Placeholder</li>
+                <li>Downloads</li>
                 </div>
             </a>
         </nav>
@@ -27,14 +27,42 @@
             </div>
         </a>
     </div>
+    <h1 class="landingGreeter">Welcome to Nestly Chat!</h1>
+    <h3 class="landingGreeterSubtitle">Where you can create your Own Space!</h3>
     <div class="landingContent">
         <div class="landingContentHeader">
-            <h1 class="landingGreeter">Welcome to Nestly Chat!</h1>
+
+        </div>
+
+        <div class="SideInfoSection">
+            <div class="infoCardHeading1">Nestly is...</div>
+            <ul>
+                <div class="infoCardItem">
+                    <li>Open-Source</li>
+                    <p>Nestly is Completely Open Source, this way, You know exactly how our software operates on your hardware.</p>
+                </div>
+                <div class="infoCardItem">
+                    <li>Privacy First</li>  
+                    <p>Nestly is designed with Privacy in Mind, making sure that your messages are truly yours.</p>
+                </div>
+                <div class="infoCardItem">
+                    <li>Customizable</li>
+                    <p>Nestly easily themable, and extensions can easily be added to enhance the user experience.</p>
+                </div>
+                <div class="infoCardItem">
+                    <li>Lightweight and Fast</li>
+                    <p>Nestly does its best to keep bloat down, keeping the experience nice and snappy.</p>
+                </div>
+                <div class="infoCardItem">
+                    <li>Self-Hostable</li>
+                    <p>The Open-Source nature of Nestly allows for hosting Private instances, Perfect for business enviroments or hosting a private instance for your freinds and family, without having to worry about outsiders coming in!</p>
+                </div>
+            </ul>
         </div>
         <div class="landingContentInfoCard">
             <div class="infoCardIntroduction">Nestly Chat is an in-development open-source privacy-focussed user-first chat platform that aims to be an alternative to many similar platforms</div>
             <div class="infoCardSection">Nestly Aims to offer a secure platform to use for Messaging. Whether it be for work or keeping in touch with friends and family.</div>
-            <div class="infoCardHeading1">Why use Nestly?</div>
+            <!-- <div class="infoCardHeading1">Why use Nestly?</div>
             <div class="infoCardSection">
                 <ul>
                     <li>Open-Source</li>
@@ -46,7 +74,7 @@
                     <li>Lightweight and Fast</li>
                     <p>Nestly does its best to keep bloat down, keeping the experience nice and snappy.</p>
                 </ul>
-            </div>
+            </div> -->
             <div class="infoCardHeading1">Who is behind Nestly?</div>
             <div class="infoCardSection">
                 Nestly is built by a group of Discord Client Mod developers, who see that it is important to give the user the ability to customize their client. <br />
@@ -93,11 +121,18 @@
             </div>
         </div>
     </div>
+    <div class="websiteFooter">
+        <div class="websiteCopyrightNotice">&copy; 2025 - NestlyChat Team</div>
+        <div class="websiteFooterLinks">
+            <a href="/contact">Contact</a>
+            <a href="https://github.com/NestlyChat">Github</a>
+        </div>
+    </div>
+
 </div>
 
 
 <style>
-    
     .landingPage {
         position: absolute;
         width: 100%;
@@ -132,7 +167,7 @@
     .websiteNavigationTab:after {
         content: '';
         position: absolute;
-        /* bottom: -6px; */
+        bottom: 2px;
         left: 0;
         width: 10px;
         height: 3px;
@@ -153,25 +188,39 @@
         margin: 5px;
     }
     .landingContent {
-        margin-top: 70px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 15px;
+        justify-content: center;
     }
+
     .landingGreeter {
+        display: block;
         color: var(--primary-accent);
         font-weight: bold;
         text-align: center;
         font-size: 50px;
-        padding: 100px 20px;
+        padding-top: 200px;
+
+    }
+    .landingGreeterSubtitle {
+        display: block;
+        color: var(--primary-accent);
+        font-weight: bold;
+        text-align: center;
+        font-size: 20px;
+        padding-bottom: 100px;
     }
     .landingContentInfoCard {
         justify-self: center;
         height: 100%;
         width: 100%;
-        max-width: 90%;
+        max-width: 1000px;
         padding: 10px;
         border-radius: 8px;
         background-color: var(--background-tertiary);
         color: var(--text);
-        margin-bottom: 30px;
+        margin: 15px;
     }
     .infoCardIntroduction {
         color: var(--peach);
@@ -210,19 +259,64 @@
         padding: 1rem 1rem;
     }
 
+    .SideInfoSection {
+        order: 0;
+        background-color: var(--background-tertiary);
+        color: var(--text);
+        padding: 10px;
+        border-radius: 8px;
+        margin: 15px;
+        max-width: 500px;
+        min-width: 300px;
+    }
 
-    .infoCardSection li {
+    @media (max-aspect-ratio: 4/5) {
+        .SideInfoSection {
+            order: 1;
+            max-width: 100%;
+        }
+    }
+    @media (max-width: 1900px) and (max-height: 850px){
+        .SideInfoSection {
+            order: 1;
+            max-width: 100%;
+        }
+    }
+
+    .SideInfoSection li {
         list-style: none;
+        width: fit-content;
         position: relative;
         font-weight: 600;
         font-size: 1.2rem;
         color: var(--sapphire);
         margin: 2rem 0 0.5rem 0;
         padding-left: 2rem;
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 33px;
+            width: 10px;
+            height: 3px;
+            background-color: var(--sapphire);
+            transition: width 0.3s ease;
+        }
     }
 
+    .infoCardItem {
+        transition: all ease 0.2s;
+        cursor:default;
+        &:hover {
+            translate: 5px;
+            filter: drop-shadow(0 0 0.5px currentColor);
+            li::before{
+                width: calc(100% - 33px);
+            }
+        }
+    }
 
-    .infoCardSection li:after {
+    .SideInfoSection li:after {
         content: '✓';
         position: absolute;
         left: 0;
@@ -236,7 +330,7 @@
         font-size: 0.9rem;
     }
 
-    .infoCardSection p {
+    .SideInfoSection p {
         margin: 0 0 1.5rem 2rem;
         color: var(--text-color);
         line-height: 1.5;
@@ -265,12 +359,13 @@
 
     .teamGallery {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         justify-content: center;
         gap: 10px;
     }
     .teamMember {
-        max-width: 120px;
+        min-width: 120px;
         transition: all ease 0.2s;
         align-content: center;
         text-align: center;
@@ -283,6 +378,9 @@
             scale: 1.05;
         }
     }
+    .teamMemberAvatar {
+        min-width: 130px;
+    }
     .teamMemberUsername {
         border-top: 1px solid var(--primary-accent);
         margin-top: 5px;
@@ -292,5 +390,34 @@
     }
     .teamRoleDescription {
         font-size: small;
+    }
+
+    .websiteFooter {
+        position: static;
+        height: 72px;
+        display: flex;
+        background-color: var(--background-primary);
+        width: 100%;
+        bottom: 0;
+        align-items: center;
+    }
+    .websiteCopyrightNotice {
+        color: color-mix(in srgb, var(--text) 80%, black 20%);
+        margin-left: 20px;
+    }
+    .websiteFooterLinks {
+        position: absolute;
+        right: 20px;
+        color: color-mix(in srgb, var(--text) 80%, black 20%);
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        text-decoration: underline;
+        gap: 5px;
+    }
+    .websiteFooterLinks a{
+        &:hover {
+            color: var(--sapphire);
+        }
     }
 </style>
